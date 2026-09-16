@@ -15,7 +15,7 @@ where (dd=0 and ff=1) OR (dd=1 and ff=1) or (dd=1 and ff=0)
 
 
 
-//instead of this we can write 
+--instead of this we can write 
       
 SELECT DISTINCT a.seat_id
 FROM Cinema a
