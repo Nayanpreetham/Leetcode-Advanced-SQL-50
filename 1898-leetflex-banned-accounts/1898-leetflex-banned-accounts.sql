@@ -19,3 +19,13 @@ on l1.account_id = l2.account_id and l1.ip_address < l2.ip_address)
 select distinct l1acc as account_id
 from firstt
 where stat1 = 1 or stat2 = 1
+
+--
+SELECT DISTINCT a.account_id
+FROM LogInfo a
+JOIN LogInfo b
+    ON a.account_id = b.account_id
+   AND a.ip_address != b.ip_address
+   AND a.login <= b.logout
+   AND a.logout >= b.login;
+
