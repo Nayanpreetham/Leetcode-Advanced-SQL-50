@@ -21,3 +21,24 @@ from firstt)
 select person1, person2, count(joinn) as call_count, sum(duration) as total_duration
 from secondd
 group by person1, person2
+
+
+
+
+
+
+
+
+
+
+
+-- optimized code 
+SELECT 
+    CASE WHEN from_id < to_id THEN from_id ELSE to_id END AS person1,
+    CASE WHEN from_id > to_id THEN from_id ELSE to_id END AS person2,
+    COUNT(*) AS call_count,
+    SUM(duration) AS total_duration
+FROM Calls
+GROUP BY person1, person2;
+
+
